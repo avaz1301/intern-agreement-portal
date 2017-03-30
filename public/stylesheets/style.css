@@ -1,0 +1,40 @@
+html,body{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+body {
+  padding: 50px;
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+  background: linear-gradient(
+          rgba(0, 0, 0, 0.3),
+          rgba(0, 0, 0, 0.3)
+  ),
+  url(../images/QC_Library.jpg);
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+a {
+  color: #00B7FF;
+}
+.text-white{
+    color: #FFFFFF;
+}
+
+.full-height{
+  height: 100%;
+}
+
+.full-width{
+  width: 100%
+}
+
+.hero{
+  height: 450px;
+}
+
+#home-header{
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.5);
+}

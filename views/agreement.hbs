@@ -1,0 +1,132 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <span class="glyphicon glyphicon-cloud-upload"></span>
+          <h2>File Upload</h2>
+          <h4>Internship Learning Agreement Form Upload</h4>
+          <form method="POST" action="/submit-agreement">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" name="name" placeholder="Full name"><br>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" name="email" placeholder="Email"><br>
+            </div>
+            <p>Please name your PDF file as follows: 'firstname_lastname_agreement.pdf'</p>
+            <input id="upload-input" type="file" name="upload" multiple="multiple"><br>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar"></div>
+            </div>
+            <input id="submit-form-btn" type="submit" class="btn btn-primary disabled" value="Upload File">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $('#upload-input').on('change', function(){
+    $('#submit-form-btn').removeClass("disabled");
+  });
+
+  $('#submit-form-btn').on('click', function(event){
+    // event.preventDefault();
+    const files = document.getElementById('upload-input').files;
+    const file = files[0];
+    if(file == null){
+      return alert('No file selected.');
+    }
+    getSignedRequest(file);
+  });
+</script>
+
+
+// <!-- <div class="container text-white">
+//   <div class="row text-left">
+//     <div class="col-md-2"></div>
+//     <div class="col-md-8">
+//       <form>
+//         <div class="col-md-4">
+//           <div class="form-group">
+//             <label for="lastName">Last Name</label>
+//             <input type="text" class="form-control" id="lastName" placeholder="Last">
+//           </div>
+//         </div>
+//         <div class="col-md-4">
+//           <div class="form-group">
+//             <label for="firstName">First Name</label>
+//             <input type="text" class="form-control" id="firstName" placeholder="First">
+//           </div>
+//         </div>
+//         <div class="col-md-4">
+//           <div class="form-group">
+//             <label for="middleName">Middle Name</label>
+//             <input type="text" class="form-control" id="middleName" placeholder="Middle">
+//           </div>
+//         </div>
+//         <div class="form-group">
+//           <label for="studentID" class="col-sm-4 control-label">Last 4 digits of student ID</label>
+//           <div class="col-sm-4">
+//             <input type="text" class="form-control" id="studentID" placeholder="0000">
+//           </div>
+//         </div>
+//         <div class="radio-inline">
+//           <label>
+//             <input type="radio" name="optionsRadios" id="genderoptions1" value="Male" checked>Male
+//           </label>
+//         </div>
+//         <div class="radio-inline">
+//           <label>
+//             <input type="radio" name="optionsRadios" id="genderoptions2" value="Female">Female
+//           </label>
+//         </div>
+//         <div class="col-md-12">
+//           <div class="form-group">
+//             <label for="address">Address</label>
+//             <input type="text" class="form-control" id="address" placeholder="Address">
+//           </div>
+//         </div>
+//         <div class="col-md-6">
+//           <div class="form-group">
+//             <label for="phone">Telephone</label>
+//             <input type="password" class="form-control" id="phone" placeholder="xxx-xxx-xxxx">
+//           </div>
+//         </div>
+//         <div class="col-md-6">
+//           <div class="form-group">
+//             <label for="email">Email</label>
+//             <input type="email" class="form-control" id="email" placeholder="example@example.com">
+//           </div>
+//         </div>
+//         <div class="col-md-6">
+//           <div class="form-group">
+//             <label for="major">Major</label>
+//             <input type="text" class="form-control" id="major" placeholder="">
+//           </div>
+//         </div>
+//         <div class="col-md-6">
+//           <label>Student Visa?</label>
+//           <div class="radio-inline">
+//             <label>
+//               <input type="radio" name="optionsRadios1" id="visaoptions1" value="Yes" checked>Yes
+//             </label>
+//           </div>
+//           <div class="radio-inline">
+//             <label>
+//               <input type="radio" name="optionsRadios1" id="visaoptions2" value="No">No
+//             </label>
+//           </div>
+//         </div>
+//
+//
+//
+//
+//         <button type="submit" class="btn btn-default">Submit</button>
+//       </form>
+//     </div>
+//     <div class="col-md-2"></div>
+//   </div>
+// </div> -->
