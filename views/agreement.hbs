@@ -1,50 +1,49 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <span class="glyphicon glyphicon-cloud-upload"></span>
-          <h2>File Upload</h2>
-          <h4>Internship Learning Agreement Form Upload</h4>
-          <form method="POST" action="/submit-agreement">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" name="name" placeholder="Full name"><br>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" name="email" placeholder="Email"><br>
-            </div>
-            <p>Please name your PDF file as follows: 'firstname_lastname_agreement.pdf'</p>
-            <input id="upload-input" type="file" name="upload" multiple="multiple"><br>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar"></div>
-            </div>
-            <input id="submit-form-btn" type="submit" class="btn btn-primary disabled" value="Upload File">
-          </form>
+
+<div class="row">
+<div class="col-xs-12">
+  <div id="upload-form-panel" class="panel panel-default text-white">
+    <div class="panel-body">
+      <h2><span style="font-size:1.0em;" class="glyphicon glyphicon-cloud-upload"></span> File Upload</h2>
+      <h4>Internship Learning Agreement Form Upload</h4>
+      <form method="POST" action="/submit-agreement" class="m-y-3">
+        <div class="form-group m-y-2">
+          <label for="name">Name</label>
+          <input type="text" name="name" placeholder="Full name"><br>
         </div>
-      </div>
+        <div class="form-group m-y-2">
+          <label for="email">Email</label>
+          <input type="email" name="email" placeholder="Email"><br>
+        </div>
+        <p>Please name your PDF file as follows: 'firstname_lastname_agreement.pdf'</p>
+        <input id="upload-input" type="file" name="upload" multiple="multiple"><br>
+        <div class="progress m-y-2">
+          <div class="progress-bar" role="progressbar"></div>
+        </div>
+        <input id="submit-form-btn" type="submit" class="btn btn-primary disabled" value="Upload File">
+        <a href="/" class="btn btn-primary" style="float:right;">Back to Home</a>
+      </form>
     </div>
   </div>
 </div>
+</div>
 <script>
-  $('#upload-input').on('change', function(){
-    $('#submit-form-btn').removeClass("disabled");
-  });
+$('#upload-input').on('change', function(){
+  $('#submit-form-btn').removeClass("disabled");
+});
 
-  $('#submit-form-btn').on('click', function(event){
-    // event.preventDefault();
-    const files = document.getElementById('upload-input').files;
-    const file = files[0];
-    if(file == null){
-      return alert('No file selected.');
-    }
-    getSignedRequest(file);
-  });
+$('#submit-form-btn').on('click', function(event){
+  // event.preventDefault();
+  const files = document.getElementById('upload-input').files;
+  const file = files[0];
+  if(file == null){
+    return alert('No file selected.');
+  }
+  getSignedRequest(file);
+});
 </script>
 
 
-// <!-- <div class="container text-white">
+ <!-- <div class="container text-white">
 //   <div class="row text-left">
 //     <div class="col-md-2"></div>
 //     <div class="col-md-8">

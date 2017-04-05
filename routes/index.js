@@ -76,7 +76,7 @@ router.post('/submit-agreement', function(req, res) {
     from: req.body.name + ' ' + '<'+ req.body.email + '>',
     to: TARGET_EMAIL,
     subject: '✔ Intern Learning Agreement Submission | '+ req.body.name,
-    text: 'The purpose of this message is to notify you that'+req.body.name+
+    text: 'The purpose of this message is to notify you that '+req.body.name+
           '\nhas succesfully submitted the Intern Learning Agreement Form with the following file name: '+req.body.upload+
           '\nThank You'
   };

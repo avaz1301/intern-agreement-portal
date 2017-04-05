@@ -1,19 +1,17 @@
-html,body{
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-}
-
 body {
-  padding: 50px;
+  padding: 50px 0px 50px 0px;
   /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+  font: 14px 'Raleway', sans-serif !important;
   background: linear-gradient(
           rgba(0, 0, 0, 0.3),
           rgba(0, 0, 0, 0.3)
   ),
-  url(../images/QC_Library.jpg);
+  url(../images/qclibrary_bg.jpg);
   -webkit-background-size: cover;
   background-size: cover;
 }
+
+    /*-webkit-font-smoothing: antialiased*/
 
 a {
   color: #00B7FF;
@@ -37,4 +35,53 @@ a {
 #home-header{
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.5);
+}
+
+#light-text{
+  font-weight: 300 !important;
+}
+
+#bold-text{
+  font-weight: 700 !important;
+}
+
+.navbar{
+  background-color: transparent;
+}
+
+#nav-list{
+  padding-left: 0;
+}
+
+#nav-list a{
+  color: #FFFFFF;
+  transition: color 0.7s ease;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+#nav-list li{
+  padding-bottom: 2rem;
+}
+
+#nav-list a:hover{
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#upload-form-panel{
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+}
+
+#steps{
+  text-align:left;
+  list-style:none;
+  padding-left:0;
+}
+
+#steps li{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }

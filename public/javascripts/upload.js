@@ -39,8 +39,7 @@ function uploadFile(file, signedRequest, url){
     if(xhr.readyState === 4){
       if(xhr.status === 200){
         console.log('UPLOAD FILE Success');
-        // document.getElementById('preview').src = url;
-        // document.getElementById('avatar-url').value = url;
+        alert('File was uploaded succesfully! Thank You!');
       }
       else{
         alert('Could not upload file.');

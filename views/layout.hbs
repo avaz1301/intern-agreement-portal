@@ -4,18 +4,36 @@
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='/stylesheets/util_spacing.css' />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous">
     </script>
   </head>
   <body>
-    {{{body}}}
+    <div class="">
+      <div class="col-md-2 col-sm-2 col-xs-12 text-center">
+        <a href="/"><img src="../images/Queens_College_Logo.png" alt="qc_logo" style="max-width:200px; width:100%; height:auto;"/></a>
+        <div>
+          <ul id="nav-list" style="list-style:none;">
+            <li><a href="/">Home</a></li>
+            <li><a href="/online">Submit Form</a></li>
+            <li><a href="http://www.qc.cuny.edu/Pages/home.aspx" target="_blank">Queens College</a></li>
+            <li><a href="http://www.qc.cuny.edu/studentlife/services/career/Pages/default.aspx" target="_blank">QC Career Center</a></li>
+            <li><a href="http://www.techtalentpipeline.nyc/" target="_blank">Tech Talent Pipline</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-10 col-sm-10 col-xs-12">
+        {{{body}}}
+      </div>
+    </div>
+    <!-- <div style="background-color: #000000; height: 50px;">
 
+    </div> -->
+    <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="/javascripts/upload.js"></script>
   </body>
