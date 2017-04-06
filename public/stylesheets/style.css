@@ -1,3 +1,7 @@
+html{
+  min-height: 100%;
+}
+
 body {
   padding: 50px 0px 50px 0px;
   /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
@@ -7,6 +11,7 @@ body {
           rgba(0, 0, 0, 0.3)
   ),
   url(../images/qclibrary_bg.jpg);
+  background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
 }
@@ -73,6 +78,10 @@ a {
 #upload-form-panel{
   background-color: rgba(0, 0, 0, 0.7);
   border: none;
+}
+
+#upload-form-panel .form-group input{
+  color: #000000;
 }
 
 #steps{

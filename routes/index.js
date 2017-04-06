@@ -44,8 +44,8 @@ router.get('/download', function(req,res,next){
 router.get('/sign-s3', function(req, res){
   console.log("IN /SIGN-S3");
   const s3       = new aws.S3();
-  const fileName = req.query['file-name'];
-  const fileType = req.query['file-type'];
+  const fileName = encodeURIComponent(req.query['file-name']);
+  const fileType = encodeURIComponent(req.query['file-type']);
   const s3Params = {
     Bucket: S3_BUCKET,
     Key: fileName,

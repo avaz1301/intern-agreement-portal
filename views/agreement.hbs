@@ -14,7 +14,7 @@
           <label for="email">Email</label>
           <input type="email" name="email" placeholder="Email"><br>
         </div>
-        <p>Please name your PDF file as follows: 'firstname_lastname_agreement.pdf'</p>
+        <p>Please name your PDF file as follows: <strong style="color:red;">'firstname_lastname_agreement.pdf'</strong></p>
         <input id="upload-input" type="file" name="upload" multiple="multiple"><br>
         <div class="progress m-y-2">
           <div class="progress-bar" role="progressbar"></div>
@@ -28,7 +28,9 @@
 </div>
 <script>
 $('#upload-input').on('change', function(){
-  $('#submit-form-btn').removeClass("disabled");
+  setTimeout(function(){
+    $('#submit-form-btn').removeClass("disabled");
+  }, 3000);
 });
 
 $('#submit-form-btn').on('click', function(event){
