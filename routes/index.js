@@ -17,8 +17,6 @@ var transporter = nodemailer.createTransport({
 const S3_BUCKET   = process.env.S3_BUCKET;
 const TARGET_EMAIL = process.env.TARGET_EMAIL;
 
-console.log(TARGET_EMAIL);
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Intern Agreement Portal',});
@@ -44,8 +42,8 @@ router.get('/download', function(req,res,next){
 router.get('/sign-s3', function(req, res){
   console.log("IN /SIGN-S3");
   const s3       = new aws.S3();
-  const fileName = encodeURIComponent(req.query['file-name']);
-  const fileType = encodeURIComponent(req.query['file-type']);
+  const fileName = req.query['file-name'];
+  const fileType = req.query['file-type'];
   const s3Params = {
     Bucket: S3_BUCKET,
     Key: fileName,
@@ -56,7 +54,7 @@ router.get('/sign-s3', function(req, res){
 
   s3.getSignedUrl('putObject', s3Params, function(err, data){
     if(err){
-      console.log(err);
+      console.log(err, err.stack);
       return res.end();
     }
     const returnData = {
@@ -82,6 +80,7 @@ router.post('/submit-agreement', function(req, res) {
   };
   transporter.sendMail(mailOptions, function(err) {
     // req.flash('success', { msg: 'Thank you! Your ILA has been submitted.' });
+
     res.redirect('/');
   });
 });

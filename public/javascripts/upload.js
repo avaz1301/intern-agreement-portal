@@ -18,6 +18,7 @@ function getSignedRequest(file){
 
 function uploadFile(file, signedRequest, url){
   console.log("IN UPLOAD FILE");
+  console.log(signedRequest);
   const xhr = new XMLHttpRequest();
   xhr.open('PUT', signedRequest);
   // xhr.upload.addEventListener('progress', function(evt){
@@ -42,6 +43,7 @@ function uploadFile(file, signedRequest, url){
         alert('File was uploaded succesfully! Thank You!');
       }
       else{
+        console.log("Error", xhr.statusText);
         alert('Could not upload file.');
       }
     }

@@ -1,6 +1,6 @@
 
 <div class="row">
-<div class="col-xs-12">
+<div class="col-xs-12 m-b-3">
   <div id="upload-form-panel" class="panel panel-default text-white">
     <div class="panel-body">
       <h2><span style="font-size:1.0em;" class="glyphicon glyphicon-cloud-upload"></span> File Upload</h2>
@@ -28,9 +28,11 @@
 </div>
 <script>
 $('#upload-input').on('change', function(){
+  document.getElementById('submit-form-btn').value = "Loading...";
   setTimeout(function(){
     $('#submit-form-btn').removeClass("disabled");
-  }, 3000);
+    document.getElementById('submit-form-btn').value = "Upload File";
+  }, 1500);
 });
 
 $('#submit-form-btn').on('click', function(event){
@@ -43,91 +45,3 @@ $('#submit-form-btn').on('click', function(event){
   getSignedRequest(file);
 });
 </script>
-
-
- <!-- <div class="container text-white">
-//   <div class="row text-left">
-//     <div class="col-md-2"></div>
-//     <div class="col-md-8">
-//       <form>
-//         <div class="col-md-4">
-//           <div class="form-group">
-//             <label for="lastName">Last Name</label>
-//             <input type="text" class="form-control" id="lastName" placeholder="Last">
-//           </div>
-//         </div>
-//         <div class="col-md-4">
-//           <div class="form-group">
-//             <label for="firstName">First Name</label>
-//             <input type="text" class="form-control" id="firstName" placeholder="First">
-//           </div>
-//         </div>
-//         <div class="col-md-4">
-//           <div class="form-group">
-//             <label for="middleName">Middle Name</label>
-//             <input type="text" class="form-control" id="middleName" placeholder="Middle">
-//           </div>
-//         </div>
-//         <div class="form-group">
-//           <label for="studentID" class="col-sm-4 control-label">Last 4 digits of student ID</label>
-//           <div class="col-sm-4">
-//             <input type="text" class="form-control" id="studentID" placeholder="0000">
-//           </div>
-//         </div>
-//         <div class="radio-inline">
-//           <label>
-//             <input type="radio" name="optionsRadios" id="genderoptions1" value="Male" checked>Male
-//           </label>
-//         </div>
-//         <div class="radio-inline">
-//           <label>
-//             <input type="radio" name="optionsRadios" id="genderoptions2" value="Female">Female
-//           </label>
-//         </div>
-//         <div class="col-md-12">
-//           <div class="form-group">
-//             <label for="address">Address</label>
-//             <input type="text" class="form-control" id="address" placeholder="Address">
-//           </div>
-//         </div>
-//         <div class="col-md-6">
-//           <div class="form-group">
-//             <label for="phone">Telephone</label>
-//             <input type="password" class="form-control" id="phone" placeholder="xxx-xxx-xxxx">
-//           </div>
-//         </div>
-//         <div class="col-md-6">
-//           <div class="form-group">
-//             <label for="email">Email</label>
-//             <input type="email" class="form-control" id="email" placeholder="example@example.com">
-//           </div>
-//         </div>
-//         <div class="col-md-6">
-//           <div class="form-group">
-//             <label for="major">Major</label>
-//             <input type="text" class="form-control" id="major" placeholder="">
-//           </div>
-//         </div>
-//         <div class="col-md-6">
-//           <label>Student Visa?</label>
-//           <div class="radio-inline">
-//             <label>
-//               <input type="radio" name="optionsRadios1" id="visaoptions1" value="Yes" checked>Yes
-//             </label>
-//           </div>
-//           <div class="radio-inline">
-//             <label>
-//               <input type="radio" name="optionsRadios1" id="visaoptions2" value="No">No
-//             </label>
-//           </div>
-//         </div>
-//
-//
-//
-//
-//         <button type="submit" class="btn btn-default">Submit</button>
-//       </form>
-//     </div>
-//     <div class="col-md-2"></div>
-//   </div>
-// </div> -->
